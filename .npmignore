@@ -1,0 +1,15 @@
+.DS_Store
+.dropbox
+*.seed
+*.log
+*.csv
+*.dat
+*.out
+*.pid
+*.swp
+*.swo
+tmp/
+node_modules/
+.cake_task_cache
+.monitor
+node_modules/
