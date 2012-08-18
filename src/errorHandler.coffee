@@ -50,4 +50,3 @@ module.exports = (logger) ->
     app.get '/404', throwers.throw404
     app.get '/500', throwers.throw500
     app.get '/501', throwers.throw501
-

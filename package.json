@@ -22,7 +22,8 @@
     "passy": "x.x.x",
     "less-middleware": "x.x.x",
     "html-minifier": "x.x.x",
-    "marked": "x.x.x"
+    "marked": "x.x.x",
+    "jade":"x.x.x"
   },
   "devDependencies": {
     "testthings": "x.x.x"

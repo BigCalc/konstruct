@@ -3,6 +3,7 @@ browserify = require 'browserify'
 uglify = require 'uglify-js'
 {minify} =  require 'html-minifier'
 marked =  require 'marked'
+jade = require 'jade'
 
 createBrowserify = (conf, clientConf, filters = []) ->
   bundle = browserify conf.opts
@@ -45,6 +46,21 @@ createHTML = (conf) ->
   ext: '.html'
   fn: if conf then fnMinify else fn
 
+createJade = (conf) ->
+  fn = (body) ->
+    jadefn = jade.compile body, conf.jade
+    "module.exports = #{JSON.stringify(jadefn())}"
+
+  fnMinify = (body) ->
+    # console.log body
+    jadefn = jade.compile body, conf.jade
+    min = minify jadefn(), conf.minify
+    "module.exports = #{JSON.stringify(min)}"
+
+  ext: '.jade'
+  fn: if conf then fnMinify else fn
+
+
 createMarkedDown = (conf) ->
   fn = (body) ->
     md = marked body
@@ -60,8 +76,9 @@ createMarkedDown = (conf) ->
 
 # Public
 module.exports = (conf, clientConf) ->
-  filters = [createHTML(conf.minify),
-                createMarkedDown(conf.minify)
+  filters = [createHTML(conf),
+              createMarkedDown(conf),
+              createJade(conf)
   ]
 
   if conf.uglify?
