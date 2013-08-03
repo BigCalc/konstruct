@@ -6,17 +6,17 @@ var expect = require('chai').expect,
     request = require('supertest'),
     express = require('express');
 
-
 describe('xrobots middleware', function() {
   // Init
   var xrobots =  require('../../index').middleware.xrobots,
       robots = ['all', 'noindex', 'nofollow', 'none',
                 'noarchive', 'nosnippet', 'noodp',
-                'notranslate', 'noimageindex'];
+                'notranslate', 'noimageindex',
+                'unavailable_after: Fri, 25 Jun 2010 23:00:00 GMT'];
 
   robots.forEach(function (robot) {
     it(robot + ' should be a Connect middleware', function() {
-      expect(xrobots[robot]).to.be.an.instanceof(Function);
+      expect(xrobots(robot)).to.be.an.instanceof(Function);
     });
   });
 
@@ -25,7 +25,7 @@ describe('xrobots middleware', function() {
     robots.forEach(function (header) {
       it('should set x-robot-tag: ' + header, function(done) {
         var app = express();
-        app.use(xrobots[header]);
+        app.use(xrobots(header));
         app.get('/', function(req, res, next){
           res.send();
         });
@@ -37,27 +37,11 @@ describe('xrobots middleware', function() {
       });
     });
 
-    it('should set x-robot-tag unavailable_after', function(done) {
-      var app = express();
-      var date = new Date('Fri, 25 Jun 2010 23:00:00 GMT');
-      var robot = xrobots.unavailableAfter(date);
-      app.use(robot);
-      app.get('/', function(req, res, next){
-        res.send();
-      });
-      expect(robot).to.be.an.instanceof(Function);
-      app.use(robot);
-      request(app)
-        .get('/')
-        .expect('x-robots-tag', 'unavailable_after: Fri, 25 Jun 2010 23:00:00 GMT')
-        .expect(200, done);
-    });
-
     it('should set multiple headers', function(done) {
       var app = express();
-      app.use(xrobots.nofollow);
-      app.use(xrobots.notranslate);
-      app.use(xrobots.noodp);
+      app.use(xrobots('nofollow'));
+      app.use(xrobots('notranslate'));
+      app.use(xrobots('noodp'));
       app.get('/test', function(req, res, next){
         res.send();
       });

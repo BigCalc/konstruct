@@ -48,6 +48,6 @@
     "url": "http://github.com/bigcalc/konstruct/issues"
   },
   "scripts": {
-    "test": "./node_modules/mocha/bin/mocha"
+    "test": "./node_modules/mocha/bin/mocha --recursive"
   }
 }
