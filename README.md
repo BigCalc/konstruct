@@ -12,7 +12,7 @@ npm install konstruct
 Usage
 -----
 
-```coffee-script
+```js
 
 
 ```

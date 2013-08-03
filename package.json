@@ -1,52 +1,53 @@
 {
   "name": "konstruct",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Server factories & middleware",
   "keywords": [
-    "middleware", "factory"
+    "middleware",
+    "factory"
   ],
-  "homepage": "http://github.com/quillu/konstruct",
-  "contributors": [
-    "Dharmesh Malam <d@quillu.com> (http://dharmeshmalam.com)"
-  ],
+  "homepage": "http://github.com/bigcalc/konstruct",
   "main": "index.js",
   "dependencies": {
-    "coffee-script": "x.x.x",
-    "aws2js": "x.x.x",
-    "things": "x.x.x",
-    "browserify": "x.x.x",
-    "uglify-js": "x.x.x",
-    "fileify": "x.x.x",
-    "redis": "x.x.x",
+    "redis": "~0.8.4",
     "winston": "x.x.x",
-    "passy": "x.x.x",
-    "less-middleware": "x.x.x",
-    "html-minifier": "x.x.x",
-    "marked": "x.x.x",
-    "jade":"x.x.x"
+    "passy": "~0.5.1",
+    "bytes": "~0.2.1",
+    "cli-color": "~0.2.2",
+    "nconf": "~0.6.7",
+    "hiredis": "~0.1.15"
   },
   "devDependencies": {
-    "testthings": "x.x.x"
+    "mocha": "x.x.x",
+    "chai": "x.x.x",
+    "grunt": "~0.4.1",
+    "grunt-contrib-jshint": "~0.6.2",
+    "grunt-jsonlint": "~1.0.0",
+    "matchdep": "~0.1.2",
+    "grunt-mocha-test": "~0.6.2",
+    "supertest": "~0.7.1",
+    "express": "~3.3.4",
+    "sinon": "~1.7.3",
+    "sinon-chai": "~2.4.0"
   },
   "engines": {
-    "node": ">=0.8.0",
+    "node": "0.x.x",
     "npm": "x.x.x"
   },
   "licenses": [
     {
-      "type": "MIT",
-      "url": "http://github.com/quillu/konstruct/raw/master/LICENSE"
+      "type": "BSD 3-Clause",
+      "url": "http://github.com/bigcalc/konstruct/raw/master/LICENSE"
     }
   ],
   "repository": {
     "type": "git",
-    "url": "git://github.com/quillu/konstruct.git"
+    "url": "git://github.com/bigcalc/konstruct.git"
   },
   "bugs": {
-    "url": "http://github.com/quillu/konstruct/issues"
+    "url": "http://github.com/bigcalc/konstruct/issues"
   },
   "scripts": {
-    "test": "cake test"
-  },
-  "optionalDependencies": {}
+    "test": "./node_modules/mocha/bin/mocha"
+  }
 }

@@ -1,3 +1,6 @@
-require('coffee-script');
-module.exports = require('./src');
-module.exports.middleware = require('./src/middleware');
+// © 2013 QUILLU INC.
+// Export Library
+'use strict'
+
+module.exports = require('./lib');
+module.exports.middleware = require('./lib/middleware');
