@@ -16,11 +16,11 @@ describe('Error Logger middleware', function() {
     expect(errorLogger).to.be.an.instanceof(Function);
   });
 
-  describe('Log Errors', function() {
+  describe('should Log Errors', function() {
 
-    it('should log an non status error', function() {
+    it('on non http error', function() {
       var error = new Error(),
-          req = {logger: sinon.spy()},
+          req = { logger: { error: sinon.spy()} },
           next = sinon.spy();
 
       errorLogger(error, req, {}, next);
@@ -29,9 +29,9 @@ describe('Error Logger middleware', function() {
 
     });
 
-    it('should log status errors > 500', function() {
+    it('on http errors > 500', function() {
       var error = new Error(),
-          req = {logger: sinon.spy()},
+          req = { logger: { error: sinon.spy()} },
           next = sinon.spy();
       error.status = 500;
 
@@ -41,9 +41,9 @@ describe('Error Logger middleware', function() {
 
     });
 
-    it('should log strings ', function() {
+    it('on strings ', function() {
       var error = 'err',
-          req = {logger: sinon.spy()},
+          req = { logger: { error: sinon.spy()} },
           next = sinon.spy();
 
       errorLogger(error, req, {}, next);
@@ -52,15 +52,15 @@ describe('Error Logger middleware', function() {
 
     });
 
-    it('should not status errors < 500', function() {
+    it('on http errors < 500', function() {
       var error = new Error(),
-          req = {logger: sinon.spy()},
+          req = { logger: { error: sinon.spy()} },
           next = sinon.spy();
 
       error.status = 404;
 
       errorLogger(error, req, {}, next);
-      expect(req.logger).to.not.have.been.called;
+      expect(req.logger.error).to.not.have.been.called;
       expect(next).to.have.been.calledOne;
 
     });

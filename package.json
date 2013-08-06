@@ -9,26 +9,25 @@
   "homepage": "http://github.com/bigcalc/konstruct",
   "main": "index.js",
   "dependencies": {
-    "redis": "~0.8.4",
+    "redis": "x.x.x",
     "winston": "x.x.x",
-    "passy": "~0.5.1",
-    "bytes": "~0.2.1",
-    "cli-color": "~0.2.2",
-    "nconf": "~0.6.7",
-    "hiredis": "~0.1.15"
+    "passy": "x.x.x",
+    "bytes": "x.x.x",
+    "cli-color": "x.x.x",
+    "hiredis": "x.x.x"
   },
   "devDependencies": {
     "mocha": "x.x.x",
     "chai": "x.x.x",
-    "grunt": "~0.4.1",
-    "grunt-contrib-jshint": "~0.6.2",
-    "grunt-jsonlint": "~1.0.0",
-    "matchdep": "~0.1.2",
-    "grunt-mocha-test": "~0.6.2",
-    "supertest": "~0.7.1",
-    "express": "~3.3.4",
-    "sinon": "~1.7.3",
-    "sinon-chai": "~2.4.0"
+    "grunt": "x.x.x",
+    "grunt-contrib-jshint": "x.x.x",
+    "grunt-jsonlint": "x.x.x",
+    "matchdep": "x.x.x",
+    "grunt-mocha-test": "x.x.x",
+    "supertest": "x.x.x",
+    "express": "x.x.x",
+    "sinon": "x.x.x",
+    "sinon-chai": "x.x.x"
   },
   "engines": {
     "node": "0.x.x",
