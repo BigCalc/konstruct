@@ -14,6 +14,7 @@
     "passy": "x.x.x",
     "bytes": "x.x.x",
     "cli-color": "x.x.x",
+    "nconf": "x.x.x",
     "hiredis": "x.x.x"
   },
   "devDependencies": {

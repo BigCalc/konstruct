@@ -1,23 +1,43 @@
-Konstruct Source
-============
+# konstruct #
 
-Server middlware and factories
+[![Build Status](https://travis-ci.org/BigCalc/konstruct.png?branch=master)](https://travis-ci.org/BigCalc/things)
 
-Install
--------
-```
-npm install konstruct
-```
+[![NPM](https://nodei.co/npm/konstruct.png?downloads=true)](https://nodei.co/npm/things/)
 
-Usage
------
+konstruct is a set of factories and express middlewares
 
-```js
-
+## Install ##
 
 ```
+npm install --save konstruct
+```
+## Features ##
+### Factories ###
+* error
+* winston logger
+* redis
+* nconf config
 
-Features
---------
+### Middleware ###
+* blockhidden
+* errorHandler
+* errorLogger
+* forceLatestIE
+* guestID
+* redirect
+* requestID
+* winstonLogger
+* xrobots
 
+## Developer ###
+Create Github issues for all bugs, features & requests. Pull requests are welcome.
 
+## Test ###
+Test with `npm test`
+
+## TODO ##
+Add
+[_] redirect incorrect cased routes
+
+## License ##
+[BSD 3-Clause](LICENSE)
