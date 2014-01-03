@@ -110,7 +110,7 @@ describe('redirect middleware', function(){
         noRedirect('www.quillu.com', '/test?q=a', 'post', 3000));
 
     it('shoud redirect www domains with trailing slashes & querystrings (/test)',
-        redirect('www.quillu.com', '/test/?q=a', '//quillu.com/test?q=a'))
+        redirect('www.quillu.com', '/test/?q=a', '//quillu.com/test?q=a'));
 
     it('shoud redirect www domains with PORT & trailing slashes & preserve querystrings (/test)',
         redirect('www.quillu.com', '/test/?q=a', '//quillu.com/test?q=a'));
