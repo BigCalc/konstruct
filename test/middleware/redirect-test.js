@@ -1,4 +1,4 @@
-// © 2013 QUILLU INC.
+// © 2014 QUILLU INC.
 // redirect middleware Mocha test
 'use strict';
 
@@ -30,28 +30,28 @@ function redirect (host, path, location, port) {
   };
 }
 
-describe('redirect middleware', function(){
+describe('redirect middleware', function() {
   // Init
   var redirects =  require('../../index').middleware.redirect;
 
   beforeEach(function() {
     app = express();
     app.use(redirects);
-    app.get('/', function(req, res, next){
+    app.get('/', function(req, res, next) {
       res.send();
     });
 
-    app.all('/test', function(req, res, next){
+    app.all('/test', function(req, res, next) {
       res.send();
     });
 
   });
 
-  it('should be a Connect middleware', function(){
+  it('should be a Connect middleware', function() {
     expect(redirects).to.be.an.instanceof(Function);
   });
 
-  describe('SupressWWW', function(){
+  describe('SupressWWW', function() {
     it('should not redirect naked domains',
         noRedirect('quillu.com', '/'));
 
@@ -117,7 +117,7 @@ describe('redirect middleware', function(){
 
   });
 
-  describe('Redirect Trailing Slash', function(){
+  describe('Redirect Trailing Slash', function() {
     it('should not redirect trailing slashes (/)',
         noRedirect('quillu.com', '/'));
 

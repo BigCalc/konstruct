@@ -1,6 +1,6 @@
-// © 2013 QUILLU INC.
+// © 2014 QUILLU INC.
 // Export Library
-'use strict'
+'use strict';
 
 module.exports = require('./lib');
 module.exports.middleware = require('./lib/middleware');

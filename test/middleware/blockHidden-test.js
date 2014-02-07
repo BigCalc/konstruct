@@ -1,4 +1,4 @@
-// © 2013 QUILLU INC.
+// © 2014 QUILLU INC.
 // blockHidden middleware Mocha test
 'use strict';
 

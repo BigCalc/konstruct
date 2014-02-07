@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/BigCalc/konstruct.png?branch=master)](https://travis-ci.org/BigCalc/things)
 
-[![NPM](https://nodei.co/npm/konstruct.png?downloads=true)](https://nodei.co/npm/things/)
+[![NPM](https://nodei.co/npm/konstruct.png?downloads=true)](https://nodei.co/npm/konstruct/)
 
 konstruct is a set of factories and express middlewares
 

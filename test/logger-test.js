@@ -1,4 +1,4 @@
-// © 2013 QUILLU INC.
+// © 2014 QUILLU INC.
 // Winston Logger Factory Mocha test
 'use strict';
 
@@ -25,7 +25,7 @@ describe('Winston Logger Factory', function() {
 
   describe('Create a winston logger', function() {
 
-    it('should return a winston instance', function(){
+    it('should return a winston instance', function() {
       var logger = loggerFactory(conf);
       expect(logger).to.be.an.instanceof(winston.Logger);
       expect(logger.child).to.be.an.instanceof(Function);

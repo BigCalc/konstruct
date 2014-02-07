@@ -1,4 +1,4 @@
-// © 2013 QUILLU INC.
+// © 2014 QUILLU INC.
 // nConf config Factory Mocha test
 'use strict';
 
@@ -15,7 +15,7 @@ describe('nConf Config Factory', function() {
 
   describe('Create a blended config', function() {
 
-    it('should return a nconf instance', function(){
+    it('should return a nconf instance', function() {
       var conf = confFactory(build);
       expect(conf.stores.argv).to.exist;
       expect(conf.stores.env).to.exist;
