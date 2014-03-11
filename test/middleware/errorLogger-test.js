@@ -54,13 +54,13 @@ describe('Error Logger middleware', function() {
 
     it('on http errors < 500', function() {
       var error = new Error(),
-          req = { logger: { error: sinon.spy()} },
+          req = { logger: { warn: sinon.spy()} },
           next = sinon.spy();
 
       error.status = 404;
 
       errorLogger(error, req, {}, next);
-      expect(req.logger.error).to.not.have.been.called;
+      expect(req.logger.warn).to.have.been.called;
       expect(next).to.have.been.calledOne;
 
     });

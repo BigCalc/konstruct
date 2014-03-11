@@ -82,7 +82,7 @@ describe('Error Handler middleware', function() {
         request(app)
           .get('/throwError')
           .set('Accept', 'application/json')
-          .expect(500, /.*500.Error.*/)
+          .expect(500, /.*error.*/)
           .expect('content-type', 'application/json', done);
       });
 
@@ -101,7 +101,7 @@ describe('Error Handler middleware', function() {
         request(app)
           .get('/nextString')
           .set('Accept', 'application/json')
-          .expect(500, /.*500.*Internal Server Error.*/)
+          .expect(500, /.*error.*/)
           .expect('content-type', 'application/json', done);
       });
 
