@@ -23,7 +23,7 @@ describe('requestID middleware', function() {
       var req = {};
       requestID(req, {}, next);
 
-      expect(req.id).to.match(/^[A-Za-z0-9-_]{12}$/m);
+      expect(req.id).to.match(/^[A-Za-z0-9\-_]{16}$/m);
       expect(next).to.have.been.calledOnce;
     });
 
@@ -32,7 +32,7 @@ describe('requestID middleware', function() {
       var req = {id: 'ahU38_-sj3DT'};
       requestID(req, {}, next);
 
-      expect(req.id).to.match(/^[A-Za-z0-9-_]{12}$/m);
+      expect(req.id).to.match(/^[A-Za-z0-9\-_]{12}$/m);
       expect(next).to.have.been.calledOnce;
     });
 

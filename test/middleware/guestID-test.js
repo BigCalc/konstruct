@@ -37,7 +37,7 @@ describe('guestID middleware', function() {
     it('should create a ID on fresh request (/)', function(done) {
       request(app)
         .get('/')
-        .expect(200, /^[0-9a-f]{16}$/m, done);
+        .expect(200, /^[_\-0-9-A-Za-z]{11}$/m, done);
     });
 
     it('should return same id when already set)', function(done) {
