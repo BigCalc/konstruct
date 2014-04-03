@@ -13,9 +13,7 @@ describe('Redis Factory', function() {
 
   var conf = {
       debug: false,
-      password: 'abc',
-      port: 100,
-      host: 'localhost',
+      connection: 'redis://user:pass@localhost:100',
       options: null
     };
 
@@ -27,17 +25,17 @@ describe('Redis Factory', function() {
 
     it('should return a redis instance', function(){
       var loggerStub = {child: sinon.stub().returns({
-          debug:sinon.stub(),
-          info:sinon.stub()
+          debug: sinon.stub(),
+          info: sinon.stub()
         })};
 
       var r = redisFactory(conf, loggerStub);
       r.on('error', function(e){
         expect(e.message).to.match(/localhost:100/);
         expect(r).to.be.an.instanceof(redis.RedisClient);
-        expect(r.host).to.equal(conf.host);
-        expect(r.port).to.equal(conf.port);
-        expect(r.auth_pass).to.equal(conf.password);
+        expect(r.host).to.equal('localhost');
+        expect(r.port).to.equal('100');
+        expect(r.auth_pass).to.equal('pass');
       });
     });
   });
