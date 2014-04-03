@@ -130,7 +130,7 @@ describe('Error Handler middleware', function() {
 
       it('should send the error view by default', function() {
         var err = new Error(),
-            res = {format: function(f) {f.html();}, render: sinon.spy()},
+            res = {format: function(f) {f.html();}, render: sinon.spy(), status: sinon.spy()},
             next = sinon.spy();
 
         err.status = 401;
@@ -139,12 +139,13 @@ describe('Error Handler middleware', function() {
         errorHandler(err, {}, res, next);
 
         expect(res.render).to.have.been.calledWith('error');
+        expect(res.status).to.have.been.called;
         expect(next).to.not.have.been.called;
       });
 
       it('should send 404 html errors messages when acceptable', function() {
         var err = new Error(),
-            res = {format: function(f) {f.html();}, render: sinon.spy()},
+            res = {format: function(f) {f.html();}, render: sinon.spy(), status: sinon.spy()},
             next = sinon.spy();
 
         err.status = 404;
@@ -153,6 +154,7 @@ describe('Error Handler middleware', function() {
         errorHandler(err, {}, res, next);
 
         expect(res.render).to.have.been.calledWith('error');
+        expect(res.status).to.have.been.called;
         expect(next).to.not.have.been.called;
 
       });
