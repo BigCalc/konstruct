@@ -1,6 +1,6 @@
 # konstruct #
 
-[![Build Status](https://travis-ci.org/BigCalc/konstruct.png?branch=master)](https://travis-ci.org/BigCalc/things)
+[![Build Status](https://travis-ci.org/OctaveWealth/konstruct.png?branch=master)](https://travis-ci.org/OctaveWealth/konstruct)
 
 [![NPM](https://nodei.co/npm/konstruct.png?downloads=true)](https://nodei.co/npm/konstruct/)
 
@@ -34,10 +34,6 @@ Create Github issues for all bugs, features & requests. Pull requests are welcom
 
 ## Test ###
 Test with `npm test`
-
-## TODO ##
-Add
-[_] redirect incorrect cased routes
 
 ## License ##
 [BSD 3-Clause](LICENSE)
