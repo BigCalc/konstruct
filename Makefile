@@ -10,14 +10,11 @@ MOCHA = ./node_modules/.bin/mocha
 JS_FILES = $(shell find lib -type f -name '*.js') $(shell find test -type f -name '*.js')
 JSON_FILES = package.json
 
-# Call make with ENV = prod for production build
-ENV = dev
-NODE_ENV = development
-URL = http://127.0.0.1:3030
+# Default to patch release. Can call deploy with VERSION={major|minor}.
+VERSION = patch
 
-ifeq ($(ENV),prod)
-	NODE_ENV = production
-endif
+# Default to development. Call with NODE_ENV=production
+NODE_ENV = development
 
 all: lint test
 
@@ -53,7 +50,7 @@ jshint: $(JS_FILES)
 # Deploy
 deploy: lint test
 	git stash
-	npm version patch
+	npm version $(VERSION)
 	git push origin master
 	git push --tags
 	git stash pop
