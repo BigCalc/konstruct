@@ -6,7 +6,7 @@
     "middleware",
     "factory"
   ],
-  "homepage": "http://github.com/bigcalc/konstruct",
+  "homepage": "http://github.com/octavewealth/konstruct",
   "main": "index.js",
   "dependencies": {
     "redis": "^0.10.0",
@@ -35,15 +35,15 @@
   "licenses": [
     {
       "type": "BSD 3-Clause",
-      "url": "http://github.com/bigcalc/konstruct/raw/master/LICENSE"
+      "url": "http://github.com/octavewealth/konstruct/raw/master/LICENSE"
     }
   ],
   "repository": {
     "type": "git",
-    "url": "git://github.com/bigcalc/konstruct.git"
+    "url": "git://github.com/octavewealth/konstruct.git"
   },
   "bugs": {
-    "url": "http://github.com/bigcalc/konstruct/issues"
+    "url": "http://github.com/octavewealth/konstruct/issues"
   },
   "scripts": {
     "test": "./node_modules/mocha/bin/mocha --recursive"
