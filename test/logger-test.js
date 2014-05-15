@@ -10,14 +10,14 @@ describe('Winston Logger Factory', function() {
   var loggerFactory = require('../index').logger;
 
   var conf = {
-    "Console":{
-      "level": "verbose",
-      "colorize": true,
-      "timestamp": false,
-      "handleExceptions": true,
-      "exitOnError": true
+    'Console':{
+      'level': 'verbose',
+      'colorize': true,
+      'timestamp': false,
+      'handleExceptions': true,
+      'exitOnError': true
     }
-  }
+  };
 
   it('should be a function', function() {
     expect(loggerFactory).to.be.an.instanceof(Function);
