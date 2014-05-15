@@ -19,6 +19,7 @@
   },
   "devDependencies": {
     "chai": "^1.9.1",
+    "cookie-session": "^1.0.2",
     "express": "^4.2.0",
     "jshint": "^2.5.0",
     "jsonlint": "^1.6.0",

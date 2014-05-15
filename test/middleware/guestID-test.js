@@ -5,7 +5,8 @@
 var app,
     expect = require('chai').expect,
     request = require('supertest'),
-    express = require('express');
+    express = require('express'),
+    cookieSession =  require('cookie-session');
 
 
 describe('guestID middleware', function() {
@@ -20,8 +21,7 @@ describe('guestID middleware', function() {
 
     beforeEach(function() {
       app = express();
-      app.use(express.cookieParser('secret'));
-      app.use(express.cookieSession('secret'));
+      app.use(cookieSession({signed:false}));
       app.use(guestID);
 
       app.get('/', function(req, res, next) {
@@ -35,13 +35,13 @@ describe('guestID middleware', function() {
     });
 
     it('should create a ID on fresh request (/)', function(done) {
-      request(app)
+      request(app.listen())
         .get('/')
         .expect(200, /^[_\-0-9-A-Za-z]{11}$/m, done);
     });
 
     it('should return same id when already set)', function(done) {
-      request(app)
+      request(app.listen())
         .get('/test')
         .expect(200)
         .end (function(err, res) {

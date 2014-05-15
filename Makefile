@@ -32,11 +32,11 @@ clean:
 
 # Test Watch
 test:
-	@NODE_ENV='$(NODE_ENV)' MOCHA test
+	@NODE_ENV='$(NODE_ENV)' MOCHA --recursive test
 
 # Test Watch
 watch:
-	@NODE_ENV='$(NODE_ENV)' MOCHA -w test
+	@NODE_ENV='$(NODE_ENV)' MOCHA --recursive -w test
 
 # Linting
 lint: jsonlint jshint
