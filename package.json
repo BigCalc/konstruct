@@ -19,11 +19,6 @@
   },
   "devDependencies": {
     "chai": "^1.9.1",
-    "grunt-contrib-jshint": "^0.10.0",
-    "grunt-jsonlint": "~1.0.4",
-    "matchdep": "~0.3.0",
-    "grunt-mocha-test": "^0.10.0",
-    "grunt": "^0.4.4",
     "express": "^4.2.0",
     "jshint": "^2.5.0",
     "jsonlint": "^1.6.0",
