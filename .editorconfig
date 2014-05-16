@@ -13,7 +13,10 @@ insert_final_newline = true
 [*.md]
 trim_trailing_whitespace = false
 
-[{*.json,.jshintrc}]
+[*.json]
+insert_final_newline = false
+
+[.jshintrc]
 insert_final_newline = false
 
 [Makefile]
