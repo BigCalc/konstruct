@@ -29,10 +29,10 @@ npm install --save konstruct
 * winstonLogger
 * xrobots
 
-## Developer ###
-Create Github issues for all bugs, features & requests. Pull requests are welcome.
+## [Contributing](CONTRIBUTING) ##
+Create Github issues for all bugs, features & requests. Pull requests are welcome. Make sure tests are included.
 
-## Test ###
+## Test ##
 Test with `npm test`
 
 ## License ##
