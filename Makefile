@@ -7,7 +7,7 @@ JSHINT = ./node_modules/.bin/jshint
 MOCHA = ./node_modules/.bin/mocha
 
 # Files
-JS_FILES = $(shell find lib -type f -name '*.js') $(shell find test -type f -name '*.js')
+JS_FILES = $(shell find . -depth 1 -type f -name '*.js') $(shell find lib -type f -name '*.js') $(shell find test -type f -name '*.js')
 JSON_FILES = package.json
 
 # Default to patch release. Can call deploy with VERSION={major|minor}.
@@ -30,7 +30,7 @@ update:
 clean:
 	npm prune
 
-# Test Watch
+# Test
 test:
 	@NODE_ENV='$(NODE_ENV)' MOCHA --recursive test
 
@@ -47,12 +47,11 @@ jsonlint: $(JSON_FILES)
 jshint: $(JS_FILES)
 	@JSHINT -c .jshintrc $(JS_FILES)
 
-# Deploy
-deploy: lint test
-	git stash
+# Publish
+publish: lint test
 	npm version $(VERSION)
 	git push origin master
 	git push --tags
-	git stash pop
+	npm publish
 
-.PHONY: all install update clean test watch lint jsonlint jshint deploy
+.PHONY: all install update clean test watch lint jsonlint jshint publish
