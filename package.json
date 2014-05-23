@@ -47,5 +47,10 @@
   },
   "scripts": {
     "test": "./node_modules/mocha/bin/mocha --recursive"
-  }
+  },
+  "files": [
+    "lib",
+    "index.js",
+    "LICENSE"
+  ]
 }
