@@ -42,6 +42,32 @@ function redirectXForwardedPort(host, path, location, port) {
       .expect(301, done);
   };
 }
+
+function noRedirectProto(host, path, method, port) {
+  if (method == null) method = 'get';
+  if (port == null) port = 80;
+  return function(done) {
+    app.set('port', port);
+    request(app)[method](path)
+      .set('host', host)
+      .set('X-Forwarded-Proto', 'https')
+      .expect(200, done);
+  };
+}
+
+function redirectProto(host, path, location, port) {
+  if (port == null) port = 80;
+  return function(done) {
+    app.set('port', port);
+    request(app)
+      .get(path)
+      .set('host', host)
+      .set('X-Forwarded-Proto', 'http')
+      .expect('Location', location)
+      .expect(301, done);
+  };
+}
+
 describe('redirect middleware', function() {
   // Init
   var redirects =  require('../../index').middleware.redirect;
@@ -190,4 +216,23 @@ describe('redirect middleware', function() {
     it('should not redirect HEAD queries',
         noRedirect('quillu.com', '/test/?q=a', 'head'));
   });
+
+  describe('X-Forwarded-Proto SSL', function() {
+    it('should not redirect secure naked URLs',
+        noRedirectProto('quillu.com', '/'));
+
+    it('should redirect unsecure naked URLs',
+        redirectProto('quillu.com', '/', 'https://quillu.com/'));
+
+    it('should redirect unsecure URLs with subdomain',
+        redirectProto('www.quillu.com', '/', 'https://quillu.com/'));
+
+    it('should not redirect secure URLs with querystring',
+        noRedirectProto('quillu.com', '/?q=a'));
+
+    it('should redirect unsecure URLs with querystring',
+        redirectProto('quillu.com', '/?q=a', 'https://quillu.com/?q=a'));
+
+  });
+
 });
