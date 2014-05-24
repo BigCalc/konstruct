@@ -7,7 +7,7 @@ var app,
     request = require('supertest'),
     express = require('express');
 
-function noRedirect (host, path, method, port) {
+function noRedirect(host, path, method, port) {
   if (method == null) method = 'get';
   if (port == null) port = 80;
   return function(done) {
@@ -18,7 +18,7 @@ function noRedirect (host, path, method, port) {
   };
 }
 
-function redirect (host, path, location, port) {
+function redirect(host, path, location, port) {
   if (port == null) port = 80;
   return function(done) {
     app.set('port', port);

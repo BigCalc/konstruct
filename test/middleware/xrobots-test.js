@@ -14,7 +14,7 @@ describe('xrobots middleware', function() {
                 'notranslate', 'noimageindex',
                 'unavailable_after: Fri, 25 Jun 2010 23:00:00 GMT'];
 
-  robots.forEach(function (robot) {
+  robots.forEach(function(robot) {
     it(robot + ' should be a Connect middleware', function() {
       expect(xrobots(robot)).to.be.an.instanceof(Function);
     });
@@ -22,7 +22,7 @@ describe('xrobots middleware', function() {
 
   describe('X-Robots-Tag', function() {
 
-    robots.forEach(function (header) {
+    robots.forEach(function(header) {
       it('should set x-robot-tag: ' + header, function(done) {
         var app = express();
         app.use(xrobots(header));

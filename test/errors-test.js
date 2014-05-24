@@ -16,7 +16,7 @@ describe('errors builder', function() {
 
   describe('Create all http errors', function() {
 
-    Object.keys(http.STATUS_CODES).forEach( function (status) {
+    Object.keys(http.STATUS_CODES).forEach(function(status) {
       if (status < 400) {
         it('should not build a ' + status + ' error', function() {
           var fn = function(){ errors(+status);};

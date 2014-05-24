@@ -7,7 +7,6 @@ var app,
     request = require('supertest'),
     express = require('express');
 
-
 describe('forceLatestIE middleware', function() {
   // Init
   var forceLatestIE =  require('../../index').middleware.forceLatestIE;

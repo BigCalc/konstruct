@@ -29,22 +29,22 @@ describe('Error Handler middleware', function() {
 
     app = express();
 
-    app.get('/nextError', function (req, res, next) {
+    app.get('/nextError', function(req, res, next) {
       var err = new Error();
       err.status = 401;
       err.userMessage = '401 Error';
       next(err);
     });
 
-    app.get('/throwError', function (req, res, next) {
+    app.get('/throwError', function(req, res, next) {
       throw new Error('thrown error');
     });
 
-    app.get('/nextString', function (req, res, next) {
+    app.get('/nextString', function(req, res, next) {
       next('nexted string');
     });
 
-    app.get('/throwString', function (req, res, next) {
+    app.get('/throwString', function(req, res, next) {
       throw 'thrown string';
     });
 
