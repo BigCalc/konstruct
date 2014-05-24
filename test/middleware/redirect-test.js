@@ -30,6 +30,18 @@ function redirect(host, path, location, port) {
   };
 }
 
+function redirectXForwardedPort(host, path, location, port) {
+  if (port == null) port = 80;
+  return function(done) {
+    app.set('port', port+22);
+    request(app)
+      .get(path)
+      .set('host', host)
+      .set('X-Forwarded-Port', port)
+      .expect('Location', location)
+      .expect(301, done);
+  };
+}
 describe('redirect middleware', function() {
   // Init
   var redirects =  require('../../index').middleware.redirect;
@@ -72,6 +84,9 @@ describe('redirect middleware', function() {
 
     it('should redirect www domains with PORT (/)',
         redirect('www.quillu.com', '/', '//quillu.com:3000/', 3000));
+
+    it('should redirect www domains with X-Forwarded-Port set (/)',
+        redirectXForwardedPort('www.quillu.com', '/', '//quillu.com/', 80));
 
     it('should not redirect naked domains with PORT (/test)',
         noRedirect('quillu.com', '/test', 'get', 3000));
