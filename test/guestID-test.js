@@ -11,7 +11,7 @@ var app,
 
 describe('guestID middleware', function() {
   // Init
-  var guestID = require('../../index').middleware.guestID;
+  var guestID = require('../index').guestID;
 
   it('should be a Connect middleware', function() {
     expect(guestID).to.be.an.instanceof(Function);

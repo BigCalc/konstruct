@@ -8,7 +8,7 @@ var expect = require('chai').expect,
 
 describe('xrobots middleware', function() {
   // Init
-  var xrobots =  require('../../index').middleware.xrobots,
+  var xrobots =  require('../index').xrobots,
       robots = ['all', 'noindex', 'nofollow', 'none',
                 'noarchive', 'nosnippet', 'noodp',
                 'notranslate', 'noimageindex',

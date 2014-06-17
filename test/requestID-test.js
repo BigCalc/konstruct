@@ -10,7 +10,7 @@ chai.use(sinonChai);
 
 describe('requestID middleware', function() {
   // Init
-  var requestID = require('../../index').middleware.requestID;
+  var requestID = require('../index').requestID;
 
   it('should be a Connect middleware', function() {
     expect(requestID).to.be.an.instanceof(Function);

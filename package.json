@@ -1,7 +1,7 @@
 {
   "name": "konstruct",
   "version": "0.4.10",
-  "description": "Server factories & middleware",
+  "description": "Express middleware",
   "keywords": [
     "middleware",
     "factory"
@@ -9,13 +9,8 @@
   "homepage": "http://github.com/OctaveWealth/konstruct",
   "main": "index.js",
   "dependencies": {
-    "redis": "^0.10.3",
-    "winston": "^0.7.3",
-    "passy": "^0.6.5",
     "bytes": "^1.0.0",
-    "cli-color": "^0.3.2",
-    "nconf": "^0.6.9",
-    "hiredis": "^0.1.16"
+    "passy": "^0.6.5"
   },
   "devDependencies": {
     "chai": "^1.9.1",

@@ -4,7 +4,7 @@
 
 [![NPM](https://nodei.co/npm/konstruct.png?downloads=true)](https://nodei.co/npm/konstruct/)
 
-konstruct is a set of factories and express middlewares
+konstruct is a set of express middlewares
 
 ## Install ##
 
@@ -12,11 +12,6 @@ konstruct is a set of factories and express middlewares
 npm install --save konstruct
 ```
 ## Features ##
-### Factories ###
-* error
-* winston logger
-* redis
-* nconf config
 
 ### Middleware ###
 * blockhidden
@@ -28,6 +23,9 @@ npm install --save konstruct
 * requestID
 * winstonLogger
 * xrobots
+
+### Helpers ###
+* error
 
 ## [Contributing](CONTRIBUTING) ##
 Create Github issues for all bugs, features & requests. Pull requests are welcome. Make sure tests are included.

@@ -14,7 +14,7 @@ chai.use(sinonChai);
 
 describe('Error Handler middleware', function() {
   // Init
-  var errorHandler = require('../../index').middleware.errorHandler;
+  var errorHandler = require('../index').errorHandler;
 
   it('should be a Connect Error Middleware', function() {
     expect(errorHandler).to.be.an.instanceof(Function);

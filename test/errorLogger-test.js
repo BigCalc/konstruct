@@ -10,7 +10,7 @@ chai.use(sinonChai);
 
 describe('Error Logger middleware', function() {
   // Init
-  var errorLogger = require('../../index').middleware.errorLogger;
+  var errorLogger = require('../index').errorLogger;
 
   it('should be a function', function() {
     expect(errorLogger).to.be.an.instanceof(Function);

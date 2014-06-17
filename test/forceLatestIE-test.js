@@ -9,7 +9,7 @@ var app,
 
 describe('forceLatestIE middleware', function() {
   // Init
-  var forceLatestIE =  require('../../index').middleware.forceLatestIE;
+  var forceLatestIE =  require('../index').forceLatestIE;
 
   it('should be a Connect middleware', function() {
     expect(forceLatestIE).to.be.an.instanceof(Function);

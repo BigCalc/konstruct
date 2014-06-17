@@ -70,7 +70,7 @@ function redirectProto(host, path, location, port) {
 
 describe('redirect middleware', function() {
   // Init
-  var redirects =  require('../../index').middleware.redirect;
+  var redirects =  require('../index').redirect;
 
   beforeEach(function() {
     app = express();

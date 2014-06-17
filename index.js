@@ -3,4 +3,3 @@
 'use strict';
 
 module.exports = require('./lib');
-module.exports.middleware = require('./lib/middleware');

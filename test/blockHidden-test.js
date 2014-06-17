@@ -10,7 +10,7 @@ var app,
 
 describe('blockHidden middleware', function() {
   // Init
-  var blockHidden = require('../../index').middleware.blockHidden;
+  var blockHidden = require('../index').blockHidden;
 
   it('should be a Connect middleware', function() {
     expect(blockHidden).to.be.an.instanceof(Function);
