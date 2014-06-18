@@ -64,7 +64,7 @@ describe('Error Handler middleware', function() {
           .get('/nextError')
           .set('Accept', 'application/json')
           .expect(401, /.*401.Error.*/)
-          .expect('content-type', 'application/json', done);
+          .expect('content-type', 'application/json; charset=utf-8', done);
       });
 
     });
@@ -83,7 +83,7 @@ describe('Error Handler middleware', function() {
           .get('/throwError')
           .set('Accept', 'application/json')
           .expect(500, /.*error.*/)
-          .expect('content-type', 'application/json', done);
+          .expect('content-type', 'application/json; charset=utf-8', done);
       });
 
     });
@@ -102,7 +102,7 @@ describe('Error Handler middleware', function() {
           .get('/nextString')
           .set('Accept', 'application/json')
           .expect(500, /.*error.*/)
-          .expect('content-type', 'application/json', done);
+          .expect('content-type', 'application/json; charset=utf-8', done);
       });
 
     });
@@ -121,7 +121,7 @@ describe('Error Handler middleware', function() {
           .get('/throwString')
           .set('Accept', 'application/json')
           .expect(500, /.*500.*Internal Server Error.*/)
-          .expect('content-type', 'application/json', done);
+          .expect('content-type', 'application/json; charset=utf-8', done);
       });
 
     });
