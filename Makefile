@@ -32,20 +32,20 @@ clean:
 
 # Test
 test:
-	@NODE_ENV='$(NODE_ENV)' MOCHA --recursive test
+	@NODE_ENV='$(NODE_ENV)' $(MOCHA) --recursive test
 
 # Test Watch
 watch:
-	@NODE_ENV='$(NODE_ENV)' MOCHA --recursive -w test
+	@NODE_ENV='$(NODE_ENV)' $(MOCHA) --recursive -w test
 
 # Linting
 lint: jsonlint jshint
 
 jsonlint: $(JSON_FILES)
-	@for i in $(JSON_FILES); do JSONLINT -q $$i || exit $$?; done
+	@for i in $(JSON_FILES); do $(JSONLINT) -q $$i || exit $$?; done
 
 jshint: $(JS_FILES)
-	@JSHINT -c .jshintrc $(JS_FILES)
+	@$(JSHINT) -c .jshintrc $(JS_FILES)
 
 # Publish
 publish: lint test
