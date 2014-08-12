@@ -10,7 +10,7 @@
   "main": "index.js",
   "dependencies": {
     "bytes": "^1.0.0",
-    "passy": "^0.6.5"
+    "passy": "^0.7.1"
   },
   "devDependencies": {
     "chai": "^1.9.1",
