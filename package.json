@@ -9,30 +9,25 @@
   "homepage": "http://github.com/OctaveWealth/konstruct",
   "main": "index.js",
   "dependencies": {
-    "bytes": "^1.0.0",
-    "passy": "^0.7.1"
+    "bytes": "^2.1.0",
+    "passy": "^0.8.0"
   },
   "devDependencies": {
-    "chai": "^1.9.1",
+    "chai": "^3.0.0",
     "cookie-session": "^1.0.2",
-    "express": "^4.2.0",
-    "jshint": "^2.5.0",
+    "express": "^4.13.0",
+    "jshint": "^2.8.0",
     "jsonlint": "^1.6.0",
-    "mocha": "^1.18.2",
-    "sinon": "^1.9.1",
-    "sinon-chai": "^2.5.0",
-    "supertest": "^0.12.1"
+    "mocha": "^2.2.5",
+    "sinon": "^1.15.3",
+    "sinon-chai": "^2.8.0",
+    "supertest": "^1.0.1"
   },
   "engines": {
-    "node": "0.10.x",
+    "node": "^0.12.5",
     "npm": "x.x.x"
   },
-  "licenses": [
-    {
-      "type": "BSD 3-Clause",
-      "url": "http://github.com/OctaveWealth/konstruct/raw/master/LICENSE"
-    }
-  ],
+  "license": "BSD-3-Clause",
   "repository": {
     "type": "git",
     "url": "git://github.com/OctaveWealth/konstruct.git"
