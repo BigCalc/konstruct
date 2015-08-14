@@ -10,16 +10,16 @@
   "main": "index.js",
   "dependencies": {
     "bytes": "^2.1.0",
-    "passy": "^0.8.0"
+    "passy": "^0.8.1"
   },
   "devDependencies": {
-    "chai": "^3.0.0",
-    "cookie-session": "^1.0.2",
-    "express": "^4.13.0",
+    "chai": "^3.2.0",
+    "cookie-session": "^1.2.0",
+    "express": "^4.13.3",
     "jshint": "^2.8.0",
     "jsonlint": "^1.6.0",
     "mocha": "^2.2.5",
-    "sinon": "^1.15.3",
+    "sinon": "^1.15.4",
     "sinon-chai": "^2.8.0",
     "supertest": "^1.0.1"
   },
