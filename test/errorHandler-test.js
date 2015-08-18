@@ -32,7 +32,7 @@ describe('Error Handler middleware', function() {
     app.get('/nextError', function(req, res, next) {
       var err = new Error();
       err.status = 401;
-      err.userMessage = '401 Error';
+      err.message = '401 Error';
       next(err);
     });
 

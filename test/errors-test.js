@@ -32,7 +32,6 @@ describe('errors builder', function() {
           expect(error.status).to.equal(+status);
           expect(error.name).to.match(new RegExp(http.STATUS_CODES[status]));
           expect(error.data).to.exist;
-          expect(error.friendlyMessage).to.match(/.*ERROR.*/);
           expect(error.message).to.exist;
           expect(error.stack).to.exist;
 
